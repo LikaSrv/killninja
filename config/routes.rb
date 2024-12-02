@@ -13,4 +13,8 @@ Rails.application.routes.draw do
   resources :ninjas do
     resources :reservations, only: [:new, :create, :show]
   end
+
+  resources :users, only: [:show] do
+    resources :reservations, only: [:index]
+  end
 end
