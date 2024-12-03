@@ -3,4 +3,7 @@ class Ninja < ApplicationRecord
   validates :specialty, presence: true, inclusion: ["Kancho", "Onmitsudo", "Taijutsu", "Bukijutsu", "Tonjutsu"]
 
   has_many :reservations, dependent: :destroy
+
+  has_one_attached :photo
+  
 end

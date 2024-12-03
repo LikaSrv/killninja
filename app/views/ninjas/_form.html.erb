@@ -1,0 +1,12 @@
+<div>
+  <%= simple_form_for ninja , data: { insert_in_list_target: "form",
+      action: "submit->insert-in-list#send" } do |n| %>
+    <%= n.input :name, label: 'Surnom' %>
+    <%= n.input :description, label: 'Description' %>
+    <%= n.input :num_tel, label: 'Numéro de téléphone' %>
+    <%= n.input :address, label: 'Adresse' %>
+    <%= n.input :specialty, label: 'Specialité', collection: ["Kancho", "Onmitsudo", "Taijutsu", "Bukijutsu", "Tonjutsu"] %>
+    <%= n.input :photo, as: :file, label: 'Photo'%>
+    <%= n.submit "Créer un nouveau Ninja", class: 'btn btn-primary' %>
+  <% end%>
+</div>

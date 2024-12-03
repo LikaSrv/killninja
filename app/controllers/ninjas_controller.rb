@@ -6,14 +6,20 @@ class NinjasController < ApplicationController
 
   def new
     @ninja = Ninja.new
+    @ninjas = Ninja.all
   end
 
   def create
     @ninja = Ninja.new(ninja_params)
-    if @ninja.save!
-      redirect_to ninja_path(@ninja)
-    else
-      render :new, status: :unprocessable_entity
+    @ninja.user = current_user
+    respond_to do |format|
+      if @ninja.save
+        format.html { redirect_to ninja_path(@ninja) }
+        format.json # Follows the classic Rails flow and look for a create.json view
+      else
+        format.html { render "ninjas/new", status: :unprocessable_entity }
+        format.json # Follows the classic Rails flow and look for a create.json view
+      end
     end
   end
 
