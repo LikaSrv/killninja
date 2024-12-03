@@ -1,0 +1,9 @@
+<div class="card shadow" style="width: 18rem;">
+  <img src="<%= ninja.photo %>" class="card-img-top" alt="Photo de <%= ninja.name %>">
+  <div class="card-body">
+    <h5 class="card-title"><%= ninja.name %></h5>
+    <p class="card-text"><%= ninja.description %></p>
+    <p class="card-text">Lieu :<%= ninja.address %></p>
+    <%= link_to "Voir détails", ninja_path, class:"btn btn-primary" %>
+  </div>
+</div>
