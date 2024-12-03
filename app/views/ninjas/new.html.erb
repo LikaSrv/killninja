@@ -7,10 +7,11 @@
     <% else %>
       <p>Voici la liste de mes ninjas !</p>
       <% @ninjas.each do |ninja|%>
-        <%= image_tag("sticker.png", width: 100) %>
+        <div data-insert-in-list-target="items">
+          <%= image_tag("sticker.png", width: 100) %>
+        </div>
       <%end%>
     <% end%>
-
   </div>
   <div class="form col-6">
     <div class="bg-primary p-2">
