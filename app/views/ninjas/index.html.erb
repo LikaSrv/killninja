@@ -1,14 +1,14 @@
 <div class="banner">
   <div class="container">
-    <h1 class="text-center">Parcourez la liste de nos ninjas !</h1>
+    <h1 class="text-center">Choisissez votre ninja !</h1>
   </div>
 </div>
 
 <div class="container mt-3">
   <div class="row">
     <% @ninjas.each do |ninja| %>
-      <div class="col-sm-6">
-        <%= render "layouts/_card"  %>
+      <div class="col-sm-6 mb-3">
+        <%= render "/layouts/card", ninja: ninja %>
       </div>
     <% end %>
   </div>
