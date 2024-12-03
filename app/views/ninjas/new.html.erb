@@ -7,13 +7,11 @@
     <% else %>
       <p>Voici la liste de mes ninjas !</p>
       <% @ninjas.each do |ninja|%>
-        <div data-insert-in-list-target="items">
-          <%= image_tag("sticker.png", width: 100) %>
-        </div>
+        <%= render "/layouts/card", ninja: ninja %>
       <%end%>
     <% end%>
   </div>
-  <div class="form col-6">
+  <div class="form col-3">
     <div class="bg-primary p-2">
       <h3 class="text-center">Créer un nouveau ninja !</h3>
     </div>
