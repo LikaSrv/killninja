@@ -1,0 +1,21 @@
+<div class="row" style="margin: 20px">
+  <div class="col-6 text-center">
+    <%= image_tag("sticker.png", width: 100) %>
+    <h1>Mes ninjas !</h1>
+    <% if @ninjas.empty?%>
+      <p>Vous n'avez pas encore de Ninjas. Créez votre premier Ninja !</p>
+    <% else %>
+      <p>Voici la liste de mes ninjas !</p>
+      <% @ninjas.each do |ninja|%>
+        <%= image_tag("sticker.png", width: 100) %>
+      <%end%>
+    <% end%>
+
+  </div>
+  <div class="form col-6">
+    <div class="bg-primary p-2">
+      <h3 class="text-center">Créer un nouveau ninja !</h3>
+    </div>
+    <%= render 'form', ninja: @ninja %>
+  </div>
+</div>

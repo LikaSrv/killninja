@@ -6,10 +6,12 @@ class NinjasController < ApplicationController
 
   def new
     @ninja = Ninja.new
+    @ninjas = Ninja.all
   end
 
   def create
     @ninja = Ninja.new(ninja_params)
+    @ninja.user = current_user
     if @ninja.save!
       redirect_to ninja_path(@ninja)
     else
