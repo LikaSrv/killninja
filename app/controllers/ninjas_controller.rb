@@ -6,7 +6,7 @@ class NinjasController < ApplicationController
 
   def new
     @ninja = Ninja.new
-    @ninjas = Ninja.all
+    @ninjas = Ninja.where(user_id: current_user.id)
   end
 
   def create
@@ -14,7 +14,7 @@ class NinjasController < ApplicationController
     @ninja.user_id = current_user.id
     respond_to do |format|
       if @ninja.save
-        format.html { redirect_to ninja_path(@ninja) }
+        format.html { redirect_to new_ninja_path, notice: "Ninja was successfully created." }
         format.json # Follows the classic Rails flow and look for a create.json view
       else
         format.html { render "ninjas/new", status: :unprocessable_entity }
