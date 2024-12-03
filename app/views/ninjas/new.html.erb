@@ -1,22 +1,24 @@
-<div class="row" style="margin: 20px">
+<div class="row d-flex justify-content-between" style="margin: 20px">
   <div class="col-6 text-center">
-    <%= image_tag("sticker.png", width: 100) %>
+    <%= image_tag("sticker.png", width: 50) %>
     <h1>Mes ninjas !</h1>
     <% if @ninjas.empty?%>
       <p>Vous n'avez pas encore de Ninjas. Créez votre premier Ninja !</p>
     <% else %>
       <p>Voici la liste de mes ninjas !</p>
-      <% @ninjas.each do |ninja|%>
-        <div data-insert-in-list-target="items">
-          <%= image_tag("sticker.png", width: 100) %>
-        </div>
-      <%end%>
+      <div class="d-flex flex-row">
+        <% @ninjas.each do |ninja|%>
+            <%= render "/layouts/card", ninja: ninja, class: "m-4"%>
+        <%end%>
+      </div>
     <% end%>
   </div>
-  <div class="form col-6">
-    <div class="bg-primary p-2">
-      <h3 class="text-center">Créer un nouveau ninja !</h3>
+  <div class="col-4">
+    <div class="bg-primary p-2 rounded-4">
+      <h4 class="text-center">Créer un nouveau ninja !</h4>
     </div>
-    <%= render 'form', ninja: @ninja %>
+    <div class="form">
+      <%= render 'form', ninja: @ninja %>
+    </div>
   </div>
 </div>

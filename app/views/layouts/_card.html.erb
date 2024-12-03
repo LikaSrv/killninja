@@ -1,5 +1,5 @@
-<div class="card shadow align-item-center" style="width: 18rem;">
-  <img src="<%= cl_image_tag ninja.photo.key, crop: :fill %>" class="card-img-top" alt="Photo de <%= ninja.name %>">
+<div class="card shadow" style="width: 18rem;">
+  <%= cl_image_tag ninja.photo.key, crop: :fill, class: "card-img-top" alt:"Photo de <%= ninja.name%>" %>
   <div class="card-body">
     <h5 class="card-title text-center"><%= ninja.name %></h5>
     <p class="card-text"><%= ninja.description %></p>
