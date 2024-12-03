@@ -1,0 +1,15 @@
+<div class="banner">
+  <div class="container">
+    <h1 class="text-center">Parcourez la liste de nos ninjas !</h1>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <div class="row">
+    <% @ninjas.each do |ninja| %>
+      <div class="col-sm-6">
+        <%# <%= render "layouts/_card"  %> %>
+      </div>
+    <% end %>
+  </div>
+</div>
