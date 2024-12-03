@@ -17,6 +17,7 @@ user1 = User.create!(email: "test@test.fr", password: "123456")
 user2 = User.create!(email: "test01@test.fr", password: "123456")
 
 Ninja.create!(name: "Naruto", address: "Konoha", num_tel: "1234567890", specialty: "Kancho", description: "The main character of the series. He is a ninja from Konoha who dreams of becoming the Hokage.", photo: "naruto.jpg", user_id: user1.id)
+puts "toto"
 Ninja.create!(name: "Sasuke", address: "Konoha", num_tel: "1234567890", specialty: "Onmitsudo", description: "A ninja from Konoha who is a member of the Uchiha clan. He is Naruto's rival.", photo: "sasuke.jpg", user_id: user1.id)
 Ninja.create!(name: "Sakura", address: "Konoha", num_tel: "1234567890", specialty: "Taijutsu", description: "A ninja from Konoha who is a member of Team 7. She is in love with Sasuke.", photo: "sakura.jpg", user_id: user2.id)
 

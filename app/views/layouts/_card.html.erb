@@ -1,9 +1,9 @@
 <div class="card shadow" style="width: 18rem;">
-  <%= cl_image_tag ninja.photo.key, crop: :fill, class: "card-img-top" alt:"Photo de <%= ninja.name%>" %>
+    <%= cl_image_tag ninja.photo.key, width: 285, height: 250, gravity: "auto", crop: :fill %>
   <div class="card-body">
-    <h5 class="card-title text-center"><%= ninja.name %></h5>
-    <p class="card-text"><%= ninja.description %></p>
-    <p class="card-text">Lieu :<%= ninja.address %></p>
+    <h5 class="card-title text-center bg-secondary p-2 rounded text-white"><%= ninja.name %></h5>
+    <p class="card-text text-center pt-2"><%= ninja.description %></p>
+    <p class="card-text text-center">Lieu :<%= ninja.address %></p>
     <%= link_to "Voir détails", ninja_path(ninja), class:"btn btn-primary rounded" %>
   </div>
 </div>
