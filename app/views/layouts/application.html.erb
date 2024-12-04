@@ -24,7 +24,7 @@
           <ul class="navbar-nav d-flex flex-grow-& justify-content-center">
             <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to 'Déconnecter', destroy_user_session_path, method: :delete, class: 'nav-link nav-end' %>
+              <%= link_to 'Déconnecter', destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link nav-end' %>
             </li>
               <% else %>
             <li class="nav-item">
