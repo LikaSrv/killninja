@@ -8,7 +8,7 @@ class NinjasController < ApplicationController
     @markers = @ninjas.geocoded.map do |ninja|
       {
         lat: ninja.latitude,
-        lng: ninja.longitude
+        lng: ninja.longitude,
         info_ninja_html: render_to_string(partial: "info_ninja", locals: {ninja: ninja})
       }
     end
