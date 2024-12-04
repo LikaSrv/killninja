@@ -12,13 +12,26 @@ puts "Creating ninjas..."
 
 User.destroy_all
 Ninja.destroy_all
+puts "destroyed"
 
 user1 = User.create!(email: "test@test.fr", password: "123456")
 user2 = User.create!(email: "test01@test.fr", password: "123456")
+puts "users done"
 
-Ninja.create!(name: "Naruto", address: "Konoha", num_tel: "1234567890", specialty: "Kancho", description: "The main character of the series. He is a ninja from Konoha who dreams of becoming the Hokage.", photo: "naruto.jpg", user_id: user1.id)
-puts "toto"
-Ninja.create!(name: "Sasuke", address: "Konoha", num_tel: "1234567890", specialty: "Onmitsudo", description: "A ninja from Konoha who is a member of the Uchiha clan. He is Naruto's rival.", photo: "sasuke.jpg", user_id: user1.id)
-Ninja.create!(name: "Sakura", address: "Konoha", num_tel: "1234567890", specialty: "Taijutsu", description: "A ninja from Konoha who is a member of Team 7. She is in love with Sasuke.", photo: "sakura.jpg", user_id: user2.id)
+naruto = Ninja.new(name: "Naruto", address: "Konoha", num_tel: "1234567890", specialty: "Kancho", description: "The main character of the series. He is a ninja from Konoha who dreams of becoming the Hokage.", user_id: user1.id)
+p "naruto done"
+sasuke = Ninja.new(name: "Sasuke", address: "Konoha", num_tel: "1234567890", specialty: "Onmitsudo", description: "A ninja from Konoha who is a member of the Uchiha clan. He is Naruto's rival.", user_id: user1.id)
+p "sasuke done"
+sakura = Ninja.new(name: "Sakura", address: "Konoha", num_tel: "1234567890", specialty: "Taijutsu", description: "A ninja from Konoha who is a member of Team 7. She is in love with Sasuke.", user_id: user2.id)
+p "sakura done"
+naruto.photo.attach(io: file, filename: "naruto.jpg", content_type: "image/jpg")
+naruto.save
+p "naruto photo done"
+sasuke.photo.attach(io: file, filename: "sasuke.jpg", content_type: "image/jpg")
+sasuke.save
+p "sasuke photo done"
+sakura.photo.attach(io: file, filename: "sakura.jpg", content_type: "image/jpg")
+sakura.save
+p "sakura photo done"
 
 puts "End seeding ninjas"
