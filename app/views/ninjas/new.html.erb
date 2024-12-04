@@ -1,5 +1,7 @@
-<div class="row d-flex justify-content-between" style="margin: 15px">
+<div class="row d-flex justify-content-between" style="margin: 20px">
+  <a href="<%=user_reservations_path(current_user)%>">Mes réservations</a>
   <div class="col-12 col-lg-8 text-center mt-3">
+
     <%= image_tag("sticker.png", width: 50) %>
     <h1 class="text-white m-4">Mes ninjas !</h1>
     <% if @ninjas.empty?%>
