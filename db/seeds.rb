@@ -24,6 +24,13 @@ sasuke = Ninja.new(name: "Sasuke", address: "Konoha", num_tel: "1234567890", spe
 p "sasuke done"
 sakura = Ninja.new(name: "Sakura", address: "Konoha", num_tel: "1234567890", specialty: "Taijutsu", description: "A ninja from Konoha who is a member of Team 7. She is in love with Sasuke.", user_id: user2.id)
 p "sakura done"
+
+naruto_file = File.open(Rails.root.join('app/assets/images/naruto.jpg'))
+sasuke_file = File.open(Rails.root.join('app/assets/images/sasuke.jpg'))
+sakura_file = File.open(Rails.root.join('app/assets/images/sakura.jpg'))
+p "file path done"
+
+naruto.photo.attach(io: file, filename: "naruto.jpg", content_type: "image/jpg")
 naruto.photo.attach(io: file, filename: "naruto.jpg", content_type: "image/jpg")
 naruto.save
 p "naruto photo done"
