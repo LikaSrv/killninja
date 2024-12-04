@@ -1,9 +1,12 @@
 <div class="card shadow" style="width: 18rem;">
-  <%= cl_image_tag ninja.photo.key, crop: :fill %>
+    <%= cl_image_tag ninja.photo.key, width: 287, height: 250, gravity: "auto", crop: :fill %>
   <div class="card-body">
     <h5 class="card-title"><%= ninja.name %></h5>
     <p class="card-text"><%= ninja.description %></p>
     <p class="card-text">Lieu :<%= ninja.address %></p>
-    <%= link_to "Voir détails", ninja_path(ninja), class:"btn btn-primary" %>
+    <div class="d-flex justify-content-center">
+      <%= link_to "Voir détails", ninja_path(ninja), class:"btn btn-primary" %>
+    </div>
+
   </div>
 </div>

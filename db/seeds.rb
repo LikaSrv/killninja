@@ -12,9 +12,11 @@ puts "Creating ninjas..."
 
 Ninja.destroy_all
 User.destroy_all
+puts "destroyed"
 
 user1 = User.create!(email: "test@test.fr", password: "123456")
 user2 = User.create!(email: "test01@test.fr", password: "123456")
+puts "users done"
 
 naruto = Ninja.new(name: "Naruto", address: "21 avenue Thiers, Nice", num_tel: "1234567890", specialty: "Kancho", description: "The main character of the series. He is a ninja from Konoha who dreams of becoming the Hokage.", user_id: user1.id)
 sasuke = Ninja.new(name: "Sasuke", address: "14 avenue Jean Medecin, Nice", num_tel: "1234567890", specialty: "Onmitsudo", description: "A ninja from Konoha who is a member of the Uchiha clan. He is Naruto's rival.", user_id: user1.id)
