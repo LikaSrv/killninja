@@ -14,7 +14,7 @@ class NinjasController < ApplicationController
     @ninja.user_id = current_user.id
     respond_to do |format|
       if @ninja.save
-        format.html { redirect_to new_ninja_path, notice: "Ninja was successfully created." }
+        format.html { redirect_to new_ninja_path}
         format.json # Follows the classic Rails flow and look for a create.json view
       else
         format.html { render "ninjas/new", status: :unprocessable_entity }

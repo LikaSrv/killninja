@@ -5,32 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
-
-   <nav class="navbar navbar-light bg-light justify-content-between">
-      <a class="navbar-brand" href="#">
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand" href="<%=ninjas_path%>">
         <%= image_tag("logo.png", width: 50 ) %>
       </a>
-
       <form class="form-inline row my-é my-lg-0">
-      <div class="d-flex" style="align-items: baseline;">
-
-        <button class="btn btn-primary" id="input-navbar" href="#">Add New Ninja <span class="sr-only">(current)</span></button>
-
+        <div class="d-flex" style="align-items: baseline;">
+          <button class="btn btn-primary" id="input-navbar" href="#">Add New Ninja <span class="sr-only">(current)</span></button>
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </div>
+        </div>
       </form>
     </nav>
-
-
-
-
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
