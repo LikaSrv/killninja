@@ -4,6 +4,8 @@
     <h5 class="card-title"><%= ninja.name %></h5>
     <p class="card-text"><%= ninja.description %></p>
     <p class="card-text">Lieu :<%= ninja.address %></p>
-    <%= link_to "Voir détails", ninja_path(ninja), class:"btn btn-primary" %>
+    <div class="d-flex justify-content-center">
+      <%= link_to "Voir détails", ninja_path(ninja), class:"btn btn-primary" %>
+    </div>
   </div>
 </div>
