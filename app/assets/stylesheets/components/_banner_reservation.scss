@@ -1,0 +1,23 @@
+.card-category {
+  background-size: contain;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  margin: 50px;
+  height: 80%;
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+}

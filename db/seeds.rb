@@ -22,6 +22,7 @@ naruto = Ninja.new(name: "Naruto", address: "21 avenue Thiers, Nice", num_tel: "
 sasuke = Ninja.new(name: "Sasuke", address: "14 avenue Jean Medecin, Nice", num_tel: "1234567890", specialty: "Onmitsudo", description: "A ninja from Konoha who is a member of the Uchiha clan. He is Naruto's rival.", user_id: user1.id)
 sakura = Ninja.new(name: "Sakura", address: "32 Rue Trachel, Nice", num_tel: "1234567890", specialty: "Taijutsu", description: "A ninja from Konoha who is a member of Team 7. She is in love with Sasuke.", user_id: user2.id)
 
+
 naruto_image_path=Rails.root.join('app', 'assets', 'images', 'Naruto.jpg')
 naruto.photo.attach(io: File.open(naruto_image_path), filename: "naruto.jpg", content_type: "image/jpg")
 naruto.save!

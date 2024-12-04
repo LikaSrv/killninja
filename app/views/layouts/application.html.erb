@@ -7,6 +7,7 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   </head>
   <body>
     <nav class="navbar navbar-light bg-light justify-content-between">
@@ -15,29 +16,26 @@
       </a>
       <form class="form-inline row my-é my-lg-0">
         <div class="d-flex" style="align-items: baseline;">
-
-        <button class="btn btn-primary" id="input-navbar" href="#">Ajouter un nouveau Ninja <span class="sr-only">(current)</span></button>
-
+          <a class="btn btn-outline-primary" href="<%= new_ninja_path%>">
+            Ajouter un nouveau Ninja
+          </a>
           <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-
           <ul class="navbar-nav d-flex flex-grow-& justify-content-center">
             <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to 'Déconnecter', destroy_user_session_path, method: :delete, class: 'nav-link nav-end' %>
-            </li>
-              <% else %>
-            <li class="nav-item">
-              <%= link_to 'Connection', new_user_session_path, class: 'nav-link nav-end' %>
-            </li>
-
-             <% end %>
+              <li class="nav-item">
+                <%= link_to 'Déconnecter', destroy_user_session_path, method: :delete, class: 'nav-link nav-end' %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to 'Connection', new_user_session_path, class: 'nav-link nav-end' %>
+              </li>
+            <% end %>
           </ul>
         </div>
       </form>
     </nav>
     <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render "layouts/flashes" %>
   </body>
 </html>

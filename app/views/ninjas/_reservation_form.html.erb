@@ -1,0 +1,9 @@
+<div>
+  <%= simple_form_for [@ninja, @reservation] do |r| %>
+    <%= r.input :date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+    <%= r.input :mission, label: "Choisir votre mission", collection: ["Déboucher le lavabo", "Kinapper votre conjoint(e)", "Regarder un film ensemble", "Aller en cours à votre place" ]%>
+    <%= r.button :submit, "Réserver", class: "btn btn-primary" %>
+  <% end%>
+</div>
