@@ -10,7 +10,6 @@
 
 puts "Creating ninjas..."
 
-User.destroy_all
 Ninja.destroy_all
 puts "destroyed"
 
