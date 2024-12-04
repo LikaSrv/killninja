@@ -10,8 +10,11 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @ninja = Ninja.find(params[:ninja_id])
+    @reservation.ninja = @ninja
+    @reservation.user = current_user
     if @reservation.save!
-      redirect_to reservation_path(@reservation)
+      redirect_to ninjas_path, notice: "Votre réservation a bien été enregistrée"
     else
       render :new, status: :unprocessable_entity
     end

@@ -16,9 +16,9 @@ User.destroy_all
 user1 = User.create!(email: "test@test.fr", password: "123456")
 user2 = User.create!(email: "test01@test.fr", password: "123456")
 
-naruto = Ninja.new(name: "Naruto", address: "Konoha", num_tel: "1234567890", specialty: "Kancho", description: "The main character of the series. He is a ninja from Konoha who dreams of becoming the Hokage.", user_id: user1.id)
-sasuke = Ninja.new(name: "Sasuke", address: "Konoha", num_tel: "1234567890", specialty: "Onmitsudo", description: "A ninja from Konoha who is a member of the Uchiha clan. He is Naruto's rival.", user_id: user1.id)
-sakura = Ninja.new(name: "Sakura", address: "Konoha", num_tel: "1234567890", specialty: "Taijutsu", description: "A ninja from Konoha who is a member of Team 7. She is in love with Sasuke.", user_id: user2.id)
+naruto = Ninja.new(name: "Naruto", address: "Konoha", num_tel: "1234567890", specialty: "Kancho", description: "The main character of the series. He is a ninja from Konoha who dreams of becoming the Hokage.", user_id: user1.id, price: 25)
+sasuke = Ninja.new(name: "Sasuke", address: "Konoha", num_tel: "1234567890", specialty: "Onmitsudo", description: "A ninja from Konoha who is a member of the Uchiha clan. He is Naruto's rival.", user_id: user1.id, price: 50)
+sakura = Ninja.new(name: "Sakura", address: "Konoha", num_tel: "1234567890", specialty: "Taijutsu", description: "A ninja from Konoha who is a member of Team 7. She is in love with Sasuke.", user_id: user2.id, price: 75)
 
 naruto_image_path=Rails.root.join('app', 'assets', 'images', 'Naruto.jpg')
 naruto.photo.attach(io: File.open(naruto_image_path), filename: "naruto.jpg", content_type: "image/jpg")

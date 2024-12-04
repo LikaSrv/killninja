@@ -1,5 +1,7 @@
 class NinjasController < ApplicationController
 
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     @ninjas = Ninja.all
   end
@@ -24,7 +26,10 @@ class NinjasController < ApplicationController
   end
 
   def show
-    @ninja = Ninja.find(params[:id])
+    @ninja = Ninja.find(params[:id]) # We need to find the ninja to associate it with the
+    @reservation = Reservation.new
+    @reservation.ninja = @ninja
+    @reservation.user = current_user
   end
 
   def edit

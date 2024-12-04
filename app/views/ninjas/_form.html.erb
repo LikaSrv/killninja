@@ -6,6 +6,7 @@
     <%= n.input :num_tel, label: 'Numéro de téléphone' %>
     <%= n.input :address, label: 'Adresse' %>
     <%= n.input :specialty, label: 'Specialité', collection: ["Kancho", "Onmitsudo", "Taijutsu", "Bukijutsu", "Tonjutsu"] %>
+    <%= n.input :price, label: 'Prix par mission' %>
     <%= n.input :photo, as: :file, label: 'Photo'%>
     <%= n.submit "Créer un nouveau Ninja", class: 'btn btn-primary' %>
   <% end%>
