@@ -1,0 +1,28 @@
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand" href="<%=ninjas_path%>">
+        <%= image_tag("logo.png", width: 50 ) %>
+      </a>
+      <form class="form-inline row my-é my-lg-0">
+        <div class="d-flex" style="align-items: baseline;">
+          <a class="btn btn-outline-primary" href="<%= new_ninja_path%>">
+            Ajouter un nouveau Ninja
+          </a>
+          <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+          <ul class="navbar-nav d-flex flex-grow-& justify-content-center">
+            <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to 'Déconnecter', destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link nav-end' %>
+            </li>
+              <% else %>
+            <li class="nav-item">
+              <%= link_to 'Connection', new_user_session_path, class: 'nav-link nav-end' %>
+            </li>
+              <li class="nav-item">
+                <%= link_to 'Déconnecter', destroy_user_session_path, method: :delete, class: 'nav-link nav-end' %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </form>
+    </nav>
