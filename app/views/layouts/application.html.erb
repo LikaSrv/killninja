@@ -30,14 +30,8 @@
             <li class="nav-item">
               <%= link_to 'Connection', new_user_session_path, class: 'nav-link nav-end' %>
             </li>
-
-             <% end %>
               <li class="nav-item">
                 <%= link_to 'Déconnecter', destroy_user_session_path, method: :delete, class: 'nav-link nav-end' %>
-              </li>
-            <% else %>
-              <li class="nav-item">
-                <%= link_to 'Connection', new_user_session_path, class: 'nav-link nav-end' %>
               </li>
             <% end %>
           </ul>
