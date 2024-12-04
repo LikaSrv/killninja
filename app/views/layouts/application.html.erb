@@ -9,14 +9,14 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light justify-content-between">
-      <a class="navbar-brand" href="<%=ninjas_path%>">
-        <%= image_tag("logo.png", width: 50 ) %>
+    <nav class="navbar navbar-light justify-content-between border-bottom border-dark shadow">
+      <a class="navbar-brand ms-4" href="<%=ninjas_path%>">
+        <%= image_tag("logo.png", width: 50 ) %> <span class="text-white">KILL Ninja</span>
       </a>
       <form class="form-inline row my-é my-lg-0">
         <div class="d-flex" style="align-items: baseline;">
 
-        <button class="btn btn-primary" id="input-navbar" href="#">Ajouter un nouveau Ninja <span class="sr-only">(current)</span></button>
+        <button class="btn btn-primary text-white m-2" id="input-navbar" href="#">Ajouter un nouveau Ninja <span class="sr-only">(current)</span></button>
 
           <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
@@ -24,11 +24,11 @@
           <ul class="navbar-nav d-flex flex-grow-& justify-content-center">
             <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to 'Déconnecter', destroy_user_session_path, method: :delete, class: 'nav-link nav-end' %>
+              <%= link_to 'Déconnecter', destroy_user_session_path, method: :delete, class: 'nav-link nav-end mx-3 p-2 text-white bg-danger rounded-4' %>
             </li>
               <% else %>
             <li class="nav-item">
-              <%= link_to 'Connection', new_user_session_path, class: 'nav-link nav-end' %>
+              <%= link_to 'Connection', new_user_session_path, class: 'nav-link nav-end mx-3 p-2 text-white bg-success rounded-4' %>
             </li>
 
              <% end %>
