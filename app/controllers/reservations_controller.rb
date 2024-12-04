@@ -14,7 +14,7 @@ class ReservationsController < ApplicationController
     @reservation.ninja = @ninja
     @reservation.user = current_user
     if @reservation.save!
-      redirect_to ninjas_path, notice: "Votre réservation a bien été enregistrée"
+      redirect_to user_reservations_path(current_user), notice: "Votre réservation a bien été enregistrée"
     else
       render :new, status: :unprocessable_entity
     end
