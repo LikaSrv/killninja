@@ -19,6 +19,8 @@ class NinjasController < ApplicationController
     @ninjas = Ninja.where(user_id: current_user.id)
   end
 
+
+  
   def create
     @ninja = Ninja.new(ninja_params)
     @ninja.user_id = current_user.id
