@@ -4,17 +4,17 @@
   </div>
 </div>
 
-<div class="row" style="margin: 15px">
-  <div class="col-8 text-center mt-3">
+<div style="margin: 15px">
+  <div class="text-center mt-3">
     <div class="row d-flex justify-content-center">
       <% @ninjas.each do |ninja| %>
-        <div class=" col-12 col-sm-6 col-lg-4 m-3">
+        <div class="col-3">
           <%= render "/layouts/card", ninja: ninja %>
         </div>
       <% end %>
     </div>
   </div>
-  <div class="col-12 col-sm-4">
+  <div class="col-12" style="width: 100%;">
     <%= render "map" %>
   </div>
 </div>
