@@ -4,9 +4,11 @@
   </div>
 </div>
 <div style="margin: 15px">
-  <a href="<%= new_ninja_path%>">
-    Mes ninjas
-  </a>
+  <div class="text-end me-5">
+    <a href="<%= new_ninja_path%>", class="btn btn-primary text-white mt-3">
+      Mes ninjas
+    </a>
+  </div>
   <div class="text-center mt-3">
     <div class="d-flex justify-content-center", style="white-space: nowrap; overflow-x: auto;">
       <% @ninjas.each do |ninja| %>
