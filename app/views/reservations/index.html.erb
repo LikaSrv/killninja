@@ -1,5 +1,5 @@
-<h1 class="text-center m-4">Mes réservations</h1>
-<div class="row grid-my-reservations">
+<h1 class="text-center m-4 text-white">Mes réservations</h1>
+<div class="d-flex justify-content-center">
   <% @reservations.each do |reservation|%>
     <div class="card" style="background-image: url('<%= cl_image_path reservation.ninja.photo.key%>')">
       <h3 style="color: white"><%= reservation.ninja.name %></h3>
