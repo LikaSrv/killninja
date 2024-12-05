@@ -1,5 +1,5 @@
 <div class="card shadow-lg" style="width: 18rem">
-    <%= cl_image_tag ninja.photo.key, width: 287, height: 250, gravity: "auto", crop: :fill %>
+    <%= cl_image_tag ninja.photo.key, width: 287, height: 250, gravity: "auto", crop: :fill, class:"card-img-top" %>
   <div class="card-body">
     <h5 class="card-title text-white text-center bg-secondary opacity-75 rounded p-1"><%= ninja.name %></h5>
     <p class="card-text"><%= ninja.specialty %></p>
