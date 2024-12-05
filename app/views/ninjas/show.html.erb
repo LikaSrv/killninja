@@ -1,4 +1,4 @@
-<div class="card-category"
+<div class="card-category" data-controller="sound"
   style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @ninja.photo.key, height: 300, crop: :fill %>')"
 >
   <div class="card">
@@ -8,7 +8,7 @@
       <p>Prix : <%=@ninja.price%> €/mission</p>
     </div>
   </div>
-  <div class="card" data-controller="modal">
+  <div class="card" data-controller="sound">
     <h2>Réserver maintenant</h2>
     <%= render "reservation_form", reservation: @reservation%>
   </div>
