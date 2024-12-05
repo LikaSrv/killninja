@@ -1,6 +1,6 @@
     <nav class="navbar navbar-lewagon justify-content-between shadow border border-bottom border-black">
-      <a class="navbar-brand m-2" href="<%=ninjas_path%>">
-        <%= image_tag("logo.png", width: 50 ) %> <span class="text-white">Kill Ninja</span>
+      <a class="navbar-brand ms-5 me-4" href="<%=ninjas_path%>">
+        <%= image_tag("logo.png", width: 60 ) %> <span class="text-white ms-2">Kill Ninja</span>
       </a>
 
       <form class="form-inline row my-é my-lg-0">
@@ -10,15 +10,12 @@
           <ul class="navbar-nav d-flex flex-grow-& justify-content-center">
             <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to 'Déconnecter', destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link nav-end' %>
+              <%= link_to 'Déconnecter', destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link nav-end btn btn-danger text-danger hover-deco p-1 mx-3' %>
             </li>
               <% else %>
             <li class="nav-item">
-              <%= link_to 'Connection', new_user_session_path, class: 'nav-link nav-end' %>
+              <%= link_to 'Connexion', new_user_session_path, class: 'nav-link nav-end btn btn-success text-success hover-co p-1 mx-3' %>
             </li>
-              <li class="nav-item">
-                <%= link_to 'Déconnecter', destroy_user_session_path, method: :delete, class: 'nav-link nav-end' %>
-              </li>
             <% end %>
           </ul>
         </div>

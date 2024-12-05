@@ -7,7 +7,7 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-lewagon .navbar-brand {
   width: 40px;
 }
 
@@ -17,4 +17,13 @@
 
 .nav-end {
 margin: 0 8px;
+
+}
+
+.hover-co:hover {
+  color: black !important;
+}
+
+.hover-deco:hover {
+  color: white !important;
 }
