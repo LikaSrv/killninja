@@ -4,7 +4,6 @@ class NinjasController < ApplicationController
 
   def index
     @ninjas = Ninja.all
-
     @ninjas = Ninja.geocoded
 
     @markers = @ninjas.geocoded.map do |ninja|
@@ -26,7 +25,7 @@ class NinjasController < ApplicationController
   end
 
 
-  
+
   def create
     @ninja = Ninja.new(ninja_params)
     @ninja.user_id = current_user.id
