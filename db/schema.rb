@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_12_04_133105) do
+ActiveRecord::Schema[7.1].define(version: 2024_12_05_163048) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,6 +55,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_12_04_133105) do
     t.float "latitude"
     t.float "longitude"
     t.integer "price"
+    t.integer "rating"
     t.index ["user_id"], name: "index_ninjas_on_user_id"
   end
 
@@ -67,6 +68,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_12_04_133105) do
     t.string "mission"
     t.index ["ninja_id"], name: "index_reservations_on_ninja_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "content"
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "reservation_id", null: false
+    t.index ["reservation_id"], name: "index_reviews_on_reservation_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,4 +96,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_12_04_133105) do
   add_foreign_key "ninjas", "users"
   add_foreign_key "reservations", "ninjas"
   add_foreign_key "reservations", "users"
+  add_foreign_key "reviews", "reservations"
 end
