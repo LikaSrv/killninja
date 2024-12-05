@@ -26,9 +26,10 @@ class NinjasController < ApplicationController
   end
 
 
-  
+
   def create
     @ninja = Ninja.new(ninja_params)
+    @ninja.rating = 0
     @ninja.user_id = current_user.id
     respond_to do |format|
       if @ninja.save
@@ -76,6 +77,6 @@ class NinjasController < ApplicationController
   private
 
   def ninja_params
-    params.require(:ninja).permit(:name, :address, :photo, :num_tel, :specialty, :description)
+    params.require(:ninja).permit(:name, :address, :photo, :num_tel, :specialty, :description, :price)
   end
 end
