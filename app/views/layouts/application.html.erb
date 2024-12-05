@@ -26,12 +26,15 @@
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
           <ul class="navbar-nav d-flex flex-grow-& justify-content-center">
             <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to 'Déconnecter', destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link nav-end' %>
+            </li>
+              <% else %>
+            <li class="nav-item">
+              <%= link_to 'Connection', new_user_session_path, class: 'nav-link nav-end' %>
+            </li>
               <li class="nav-item">
                 <%= link_to 'Déconnecter', destroy_user_session_path, method: :delete, class: 'nav-link nav-end mx-3 p-2 text-white bg-danger rounded-4' %>
-              </li>
-            <% else %>
-              <li class="nav-item">
-                <%= link_to 'Connection', new_user_session_path, class: 'nav-link nav-end mx-3 p-2 text-white bg-success rounded-4' %>
               </li>
             <% end %>
           </ul>

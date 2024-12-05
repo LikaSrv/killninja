@@ -5,11 +5,17 @@ class NinjasController < ApplicationController
   def index
     @ninjas = Ninja.all
 
+    @ninjas = Ninja.geocoded
+
     @markers = @ninjas.geocoded.map do |ninja|
       {
         lat: ninja.latitude,
         lng: ninja.longitude,
-        info_ninja_html: render_to_string(partial: "info_ninja", locals: {ninja: ninja})
+
+        info_ninja_html: render_to_string(partial: "info_ninja", locals: {ninja: ninja}),
+
+        marker_html: render_to_string(partial: "marker", locals: {ninja: ninja})
+
       }
     end
   end
