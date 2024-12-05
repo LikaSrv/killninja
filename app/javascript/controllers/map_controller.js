@@ -19,6 +19,7 @@ export default class extends Controller {
     })
       this.#addMarkersToMap()
       this.#fitMapToMarkers()
+
   }
 
   #addMarkersToMap() {
@@ -27,6 +28,7 @@ export default class extends Controller {
 
       const customMarker = document.createElement("div")
       customMarker.innerHTML = marker.marker_html
+
 
       new mapboxgl.Marker(customMarker)
       .setLngLat([ marker.lng, marker.lat ])
@@ -39,6 +41,7 @@ export default class extends Controller {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+    
   }
 
 }
