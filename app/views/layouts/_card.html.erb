@@ -1,9 +1,15 @@
 <div class="card shadow-lg" style="width: 18rem">
     <%= cl_image_tag ninja.photo.key, width: 287, height: 250, gravity: "auto", crop: :fill, class:"card-img-top" %>
   <div class="card-body">
+    <div>
+      <% ninja.rating.times do %>
+        <i class="fas fa-star text-warning"></i>
+      <%end%>
+    </div>
     <h5 class="card-title text-white text-center bg-secondary opacity-75 rounded p-1"><%= ninja.name %></h5>
     <p class="card-text"><%= ninja.specialty %></p>
     <p class="card-text text-center">Lieu : <%= ninja.address %></p>
+    <p class="card-text text-center">Prix : <%= ninja.price %> €/mission</p>
     <div class="d-flex justify-content-center">
       <%= link_to "Voir détails", ninja_path(ninja), class:"btn btn-primary mt-3 text-white" %>
     </div>
