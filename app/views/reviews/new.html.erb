@@ -1,0 +1,17 @@
+<div class="text-white">
+  <div class="text-center m-4">
+    <h1>Donnez votre avis ! </h1>
+    <p>Qu'avez-vous pensé de votre expérience avec <%=@reservation.ninja.name%> ?</p>
+  </div>
+
+  <div class="d-flex flex-row justify-content-around">
+    <div class="card m-1">
+      <p>Mission : <%=@reservation.mission%></p>
+      <p>Date : <%=@reservation.date%></p>
+      <%= cl_image_tag @reservation.ninja.photo.key, width: 287, height: 250, gravity: "auto", crop: :fill, class:"card-img-top" %>
+    </div>
+    <div style="width: 30%;">
+      <%= render "review_form", reservation: @reservation, review: @review %>
+    </div>
+  </div>
+</div>

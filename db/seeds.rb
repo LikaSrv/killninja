@@ -18,11 +18,11 @@ user1 = User.create!(email: "test@test.fr", password: "123456")
 user2 = User.create!(email: "test01@test.fr", password: "123456")
 puts "users done"
 
-naruto = Ninja.new(name: "Naruto", address: "21 avenue Thiers, Nice", num_tel: "1234567890", specialty: "Kancho", description: "Le personnage principal de la série. C'est un ninja de Konoha qui rêve de devenir Hokage.", user_id: user1.id, price: 100)
+naruto = Ninja.new(name: "Naruto", address: "21 avenue Thiers, Nice", num_tel: "1234567890", specialty: "Kancho", description: "Le personnage principal de la série. C'est un ninja de Konoha qui rêve de devenir Hokage.", user_id: user1.id, price: 100, rating: 5)
 sasuke = Ninja.new(name: "Sasuke", address: "14 avenue Jean Medecin, Nice", num_tel: "1234567890", specialty: "Onmitsudo", description: "
-Un ninja de Konoha membre du clan Uchiha. C'est le rival de Naruto.", user_id: user1.id, price: 200)
+Un ninja de Konoha membre du clan Uchiha. C'est le rival de Naruto.", user_id: user1.id, price: 200, rating: 4)
 sakura = Ninja.new(name: "Sakura", address: "32 Rue Trachel, Nice", num_tel: "1234567890", specialty: "Taijutsu", description: "
-Une ninja de Konoha qui fait partie de l'équipe 7. Elle est amoureuse de Sasuke.", user_id: user2.id, price: 150)
+Une ninja de Konoha qui fait partie de l'équipe 7. Elle est amoureuse de Sasuke.", user_id: user2.id, price: 150, rating: 3)
 
 
 naruto_image_path=Rails.root.join('app', 'assets', 'images', 'naruto.jpg')
