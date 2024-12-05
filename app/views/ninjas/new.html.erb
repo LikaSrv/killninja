@@ -1,21 +1,25 @@
 <div class="row d-flex justify-content-between" style="margin: 20px">
-  <div class="col-6 text-center">
+  <a href="<%=user_reservations_path(current_user)%>">Mes réservations</a>
+  <div class="col-12 col-lg-8 text-center mt-3">
+
     <%= image_tag("sticker.png", width: 50) %>
-    <h1>Mes ninjas !</h1>
+    <h1 class="text-white m-4">Mes ninjas !</h1>
     <% if @ninjas.empty?%>
       <p>Vous n'avez pas encore de Ninjas. Créez votre premier Ninja !</p>
     <% else %>
-      <p>Voici la liste de mes ninjas !</p>
-      <div class="d-flex flex-row">
-        <% @ninjas.each do |ninja|%>
-            <%= render "/layouts/card", ninja: ninja, class: "m-4"%>
-        <%end%>
-      </div>
+      <p class="text-white m-4">Voici la liste de mes ninjas !</p>
+        <div class="row d-flex justify-content-center">
+          <% @ninjas.each do |ninja|%>
+            <div class="col-12 col-sm-5 m-3">
+              <%= render "/layouts/card", ninja: ninja, class: "m-4"%>
+            </div>
+          <%end%>
+        </div>
     <% end%>
   </div>
-  <div class="col-4">
-    <div class="bg-primary p-2 rounded-4">
-      <h4 class="text-center">Créer un nouveau ninja !</h4>
+  <div class="col-12 col-sm-12 col-lg-4">
+    <div class="bg-primary mt-4 rounded-4">
+      <h4 class="text-center text-white p-4">Créer un nouveau ninja !</h4>
     </div>
     <div class="form">
       <%= render 'form', ninja: @ninja %>

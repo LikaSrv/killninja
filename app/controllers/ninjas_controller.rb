@@ -11,9 +11,11 @@ class NinjasController < ApplicationController
       {
         lat: ninja.latitude,
         lng: ninja.longitude,
+
         info_ninja_html: render_to_string(partial: "info_ninja", locals: {ninja: ninja}),
 
         marker_html: render_to_string(partial: "marker", locals: {ninja: ninja})
+
       }
     end
   end
@@ -23,6 +25,8 @@ class NinjasController < ApplicationController
     @ninjas = Ninja.where(user_id: current_user.id)
   end
 
+
+  
   def create
     @ninja = Ninja.new(ninja_params)
     @ninja.user_id = current_user.id

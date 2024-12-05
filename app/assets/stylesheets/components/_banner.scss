@@ -1,8 +1,9 @@
 .banner {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('/assets/img_banner.jpg');
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('/assets/img_banner.jpg');
   background-size: cover;
   background-position: center;
   padding: 200px 0;
+  width: 100%;
 }
 
 .banner h1 {
