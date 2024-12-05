@@ -4,13 +4,15 @@
   </div>
 </div>
 <div style="margin: 15px">
-  <a href="<%= new_ninja_path%>">
-    Mes ninjas
-  </a>
+  <div class="text-end me-5">
+    <a href="<%= new_ninja_path%>", class="btn btn-primary text-white mt-3">
+      Mes ninjas
+    </a>
+  </div>
   <div class="text-center mt-3">
-    <div class="row d-flex justify-content-center">
+    <div class="d-flex justify-content-start custom-scroll", style="white-space: nowrap; overflow-x: auto;">
       <% @ninjas.each do |ninja| %>
-        <div class="col-3">
+        <div class="col-3", style="display: inline-block;">
           <%= render "/layouts/card", ninja: ninja %>
         </div>
       <% end %>
