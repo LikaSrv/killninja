@@ -1,12 +1,10 @@
-    <nav class="navbar navbar-light bg-light justify-content-between">
-      <a class="navbar-brand" href="<%=ninjas_path%>">
-        <%= image_tag("logo.png", width: 50 ) %>
+    <nav class="navbar navbar-lewagon justify-content-between shadow border border-bottom border-black">
+      <a class="navbar-brand m-2" href="<%=ninjas_path%>">
+        <%= image_tag("logo.png", width: 50 ) %> <span class="text-white">Kill Ninja</span>
       </a>
+
       <form class="form-inline row my-é my-lg-0">
         <div class="d-flex" style="align-items: baseline;">
-          <a class="btn btn-outline-primary" href="<%= new_ninja_path%>">
-            Ajouter un nouveau Ninja
-          </a>
           <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
           <ul class="navbar-nav d-flex flex-grow-& justify-content-center">
