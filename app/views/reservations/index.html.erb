@@ -1,0 +1,10 @@
+<h1 class="text-center m-4">Mes réservations</h1>
+<div class="row grid-my-reservations">
+  <% @reservations.each do |reservation|%>
+    <div class="card" style="background-image: url('<%= cl_image_path reservation.ninja.photo.key%>')">
+      <h3 style="color: white"><%= reservation.ninja.name %></h3>
+      <h3 style="color: white"><%= reservation.mission %></h3>
+      <p style="color: white"><%= reservation.date%></p>
+    </div>
+  <%end%>
+</div>
