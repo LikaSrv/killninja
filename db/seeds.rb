@@ -26,7 +26,6 @@ Un ninja de Konoha membre du clan Uchiha. C'est le rival de Naruto.", user_id: u
 sakura = Ninja.new(name: "Sakura", address: "32 Rue Trachel, Nice", num_tel: "1234567890", specialty: "Taijutsu", description: "
 Une ninja de Konoha qui fait partie de l'équipe 7. Elle est amoureuse de Sasuke.", user_id: user2.id, price: 150, rating: 3)
 
-
 # naruto_image_path=Rails.root.join('app', 'assets', 'images', 'naruto.jpg')
 naruto_image_path = URI.parse("https://res.cloudinary.com/dsbteudoz/image/upload/v1733305520/Dream_TradingCard_33_eywihx.jpg").open
 naruto.photo.attach(io: naruto_image_path, filename: "naruto.jpg", content_type: "image/jpg")
