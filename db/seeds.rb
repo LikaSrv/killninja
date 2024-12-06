@@ -25,17 +25,20 @@ sakura = Ninja.new(name: "Sakura", address: "32 Rue Trachel, Nice", num_tel: "12
 Une ninja de Konoha qui fait partie de l'équipe 7. Elle est amoureuse de Sasuke.", user_id: user2.id, price: 150, rating: 3)
 
 
-naruto_image_path=Rails.root.join('app', 'assets', 'images', 'naruto.jpg')
-naruto.photo.attach(io: File.open(naruto_image_path), filename: "naruto.jpg", content_type: "image/jpg")
+# naruto_image_path=Rails.root.join('app', 'assets', 'images', 'naruto.jpg')
+naruto_image_path = URI.parse("https://res.cloudinary.com/dsbteudoz/image/upload/v1733305520/Dream_TradingCard_33_eywihx.jpg").open
+naruto.photo.attach(io: naruto_image_path, filename: "naruto.jpg", content_type: "image/jpg")
 naruto.save!
 
 
-sasuke_image_path=Rails.root.join('app', 'assets', 'images', 'Sasuke.jpg')
-sasuke.photo.attach(io: File.open(sasuke_image_path), filename: "sasuke.jpg", content_type: "image/jpg")
+# sasuke_image_path=Rails.root.join('app', 'assets', 'images', 'Sasuke.jpg')
+sasuke_image_path = URI.parse("https://res.cloudinary.com/dsbteudoz/image/upload/v1733305520/Dream_TradingCard_32_ofse18.jpg").open
+sasuke.photo.attach(io: sasuke_image_path, filename: "sasuke.jpg", content_type: "image/jpg")
 sasuke.save!
 
-sakura_image_path=Rails.root.join('app', 'assets', 'images', 'Sakura.jpg')
-sakura.photo.attach(io: File.open(sakura_image_path), filename: "sakura.jpg", content_type: "image/jpg")
+# sakura_image_path=Rails.root.join('app', 'assets', 'images', 'Sakura.jpg')
+sakura_image_path = URI.parse("https://res.cloudinary.com/dsbteudoz/image/upload/v1733305520/Dream_TradingCard_30_j8wydx.jpg").open
+sakura.photo.attach(io: sakura_image_path, filename: "sakura.jpg", content_type: "image/jpg")
 sakura.save!
 
 puts "End seeding ninjas"
