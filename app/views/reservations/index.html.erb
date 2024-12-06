@@ -2,21 +2,18 @@
 <h1 class="text-center mt-4 text-white">Mes réservations</h1>
 
 <div class="d-flex justify-content-center">
-  <div class="row  row-cols-1 row-cols-md-3 g-4">
-      <% @reservations.each do |reservation|%>
-        <div class="col">
-          <div class="card-category card-body">
-            <a href="<%= new_reservation_review_path(reservation) %>" class="text-decoration-none">
-              <div class=" p-5 rounded-5" style="background-image: url('<%= cl_image_path reservation.ninja.photo.key%>')">
-                <h3 class="fw-bold" style="color: white"><%= reservation.ninja.name %></h3>
-                <h3 style="color: white"><%= reservation.mission %></h3>
-                <p style="color: white"><%= reservation.date%></p>
-                <u class="text-white">Qu'avez vous pensez de la prestation?</u>
-              </div>
-            </a>
+  <div class="row">
+    <% @reservations.each do |reservation|%>
+      <div class="col-2 card p-0 rounded-5" style="height: 300px" >
+        <a href="<%= new_reservation_review_path(reservation) %>" class="text-decoration-none">
+          <div class=" p-5 rounded-5" style="background-image: url('<%= cl_image_path reservation.ninja.photo.key%>'); height: 300px">
+            <h3 style="color: white"><%= reservation.ninja.name %></h3>
+            <h3 style="color: white">Mission : <%= reservation.mission %></h3>
+            <p style="color: white"><%= reservation.date%></p>
+            <u class="text-white">Qu'avez vous pensez de la prestation?</u>
           </div>
-        </div>
-      <%end%>
-    </div>
+        </a>
+      </div>
+    <%end%>
   </div>
 </div>
