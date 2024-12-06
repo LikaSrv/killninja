@@ -20,7 +20,7 @@ user1 = User.create!(email: "test@test.fr", password: "123456")
 user2 = User.create!(email: "test01@test.fr", password: "123456")
 puts "users done"
 
-naruto = Ninja.new(name: "Naruto", address: "21 avenue Thiers, Nice", num_tel: "1234567890", specialty: "Kancho", description: "Le personnage principal de la série. C'est un ninja de Konoha qui rêve de devenir Hokage.", user_id: user1.id, price: 100, rating: 5)
+naruto = Ninja.new(name: "Naruto", address: "tokyo", num_tel: "1234567890", specialty: "Kancho", description: "Le personnage principal de la série. C'est un ninja de Konoha qui rêve de devenir Hokage.", user_id: user1.id, price: 100, rating: 5)
 sasuke = Ninja.new(name: "Sasuke", address: "14 avenue Jean Medecin, Nice", num_tel: "1234567890", specialty: "Onmitsudo", description: "
 Un ninja de Konoha membre du clan Uchiha. C'est le rival de Naruto.", user_id: user1.id, price: 200, rating: 4)
 sakura = Ninja.new(name: "Sakura", address: "32 Rue Trachel, Nice", num_tel: "1234567890", specialty: "Taijutsu", description: "

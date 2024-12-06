@@ -77,6 +77,6 @@ class NinjasController < ApplicationController
   private
 
   def ninja_params
-    params.require(:ninja).permit(:name, :address, :photo, :num_tel, :specialty, :description)
+    params.require(:ninja).permit(:name, :address, :photo, :num_tel, :specialty, :description, :price)
   end
 end
