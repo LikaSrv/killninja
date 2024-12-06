@@ -6,11 +6,14 @@
       <% @reservations.each do |reservation|%>
         <div class="col">
           <div class="card-category card-body">
-            <div class=" p-5 rounded-5" style="background-image: url('<%= cl_image_path reservation.ninja.photo.key%>')">
-              <h3 style="color: white"><%= reservation.ninja.name %></h3>
-              <h3 style="color: white"><%= reservation.mission %></h3>
-              <p style="color: white"><%= reservation.date%></p>
-            </div>
+            <a href="<%= new_reservation_review_path(reservation) %>" class="text-decoration-none">
+              <div class=" p-5 rounded-5" style="background-image: url('<%= cl_image_path reservation.ninja.photo.key%>')">
+                <h3 class="fw-bold" style="color: white"><%= reservation.ninja.name %></h3>
+                <h3 style="color: white"><%= reservation.mission %></h3>
+                <p style="color: white"><%= reservation.date%></p>
+                <u class="text-black">Qu'avez vous pensez de la prestation?</u>
+              </div>
+            </a>
           </div>
         </div>
       <%end%>
