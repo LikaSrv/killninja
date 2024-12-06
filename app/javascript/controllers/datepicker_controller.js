@@ -7,6 +7,18 @@ export default class extends Controller {
       minDate: Date.now(),
       enableTime: true,
       dateFormat: "Y-m-d H:i",
+
+      locale: {
+        firstDayOfWeek: 1,
+        weekdays: {
+          shorthand: ['Dim', 'Lun', 'MAR', 'MER', 'JEU', 'VEN', 'SAM'],
+          longhand: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+        },
+        months: {
+          shorthand: ['Jan', 'Feb', 'Mars', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sep', 'Oct', 'Nov', 'Dec' ],
+          longhand: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre' ],
+        },
+      },
     })
   }
 }
