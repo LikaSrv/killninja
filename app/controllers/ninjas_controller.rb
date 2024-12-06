@@ -46,6 +46,7 @@ class NinjasController < ApplicationController
     @reservation = Reservation.new
     @reservation.ninja = @ninja
     @reservation.user = current_user
+    @reviews = @ninja.reviews
   end
 
   def edit
