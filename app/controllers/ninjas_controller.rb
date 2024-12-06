@@ -29,6 +29,7 @@ class NinjasController < ApplicationController
   def create
     @ninja = Ninja.new(ninja_params)
     @ninja.user_id = current_user.id
+    @ninja.rating = 0
     respond_to do |format|
       if @ninja.save
         format.html { redirect_to new_ninja_path}
