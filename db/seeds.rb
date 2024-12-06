@@ -8,6 +8,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+require "open-uri"
+
 puts "Creating ninjas..."
 
 Ninja.destroy_all
