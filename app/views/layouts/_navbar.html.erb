@@ -4,22 +4,30 @@
       </a>
 
       <form class="form-inline row my-é my-lg-0">
+
         <div class="d-flex" style="align-items: baseline;">
           <div class="d-none">
-          <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+            <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
           </div>
-          <ul class="navbar-nav d-flex flex-grow-& justify-content-center">
-            <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to 'Déconnecter', destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link nav-end btn btn-danger text-danger hover-deco p-1 mx-3' %>
-            </li>
-              <% else %>
-            <li class="nav-item">
-              <%= link_to 'Connexion', new_user_session_path, class: 'nav-link nav-end btn btn-success text-success hover-co p-1 mx-3' %>
-            </li>
-            <% end %>
-          </ul>
+          <div>
+            <div class="text-end me-4">
+              <a href="<%= new_ninja_path%>", class="btn btn-primary text-white mt-3">
+                Mes ninjas
+              </a>
+            </div>
+            <ul class="navbar-nav d-flex flex-grow-& justify-content-center">
+              <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to 'Déconnecter', destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link nav-end btn btn-danger text-danger hover-deco p-1 mx-3' %>
+              </li>
+                <% else %>
+              <li class="nav-item">
+                <%= link_to 'Connexion', new_user_session_path, class: 'nav-link nav-end btn btn-success text-success hover-co p-1 mx-3' %>
+              </li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </form>
     </nav>
