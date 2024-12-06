@@ -1,7 +1,7 @@
-<div>
+<div class="form text-black">
   <%= simple_form_for [reservation, review], style:"color: black" do |r| %>
-    <%= r.input :score, collection: 1..5, as: :radio_buttons%>
-    <%= r.input :content, as: :text, style:"color: antiquewhite !important"%>
+    <%= r.input :score, label: "Note", collection: 1..5, as: :radio_buttons%>
+    <%= r.input :content, label: "Commentaire", as: :text %>
     <%= r.button :submit, "Créer le commentaire", class: "btn btn-primary" %>
   <% end %>
 </div>
