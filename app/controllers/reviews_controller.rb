@@ -10,9 +10,9 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @reservation = Reservation.find(params[:reservation_id])
     @review.reservation_id = @reservation.id
-    @reservation.ninja.rating = ((@reservation.ninja.rating + @review.score) / 2).round.to_i
+    @reservation.ninja.update(rating: ((@reservation.ninja.rating + @review.score) / 2).round.to_i)
     if @review.save!
-      redirect_to reservations_path(@reservation)
+      redirect_to ninja_path(@reservation.ninja)
     else
       render :new, alert: "Votre commentaire a bien été pris en compte"
     end

@@ -20,29 +20,36 @@
 
   <% if @reviews.empty? %>
     <div class="d-flex justify-content-center">
-      <p class="text-center mt-4 bg-light bg-opacity-10 shadow" style="color: black; padding: 30px; width: 500px">Oups, pas encore d'avis</p>
+      <p class="text-center mt-4 bg-light bg-opacity-10 shadow" style="color: black; padding: 30px; width: 300px">Oups, pas encore d'avis</p>
     </div>
   <% else %>
-    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <% @reviews.each do |review|%>
-          <div class="carousel-item active" data-bs-interval="10000">
-            <div class="col">
-              <div class="card-category card-body">
-                <p style="color: white"><em><%= review.content%></em></p>
+    <div class="d-flex justify-content-center"  style="heigth: 500px">
+      <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="width: 500px">
+        <div class="carousel-inner">
+          <% @reviews.each do |review|%>
+            <div class="carousel-item active" data-bs-interval="10000">
+              <div class="col">
+                <div class="card-category card-body">
+                  <div class="text-center mt-4 bg-white shadow rounded" style="color: black; padding: 30px; width: 300px">
+                    <p>Mission: <%= review.reservation.mission %></p>
+                    <p><em><%= review.content%></em></p>
+                    <% review.score.times do %>
+                        <i class="fas fa-star text-warning"></i>
+                    <%end%>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        <%end%>
-      <div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+          <%end%>
+        <div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
   <%end%>
