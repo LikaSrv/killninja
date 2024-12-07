@@ -9,7 +9,7 @@
       </div>
     <% else %>
       <% @reservations.each do |reservation|%>
-        <div class="col-2 card p-0 rounded-5" style="height: 300px" >
+        <div class="col-2 card p-0 rounded-5" style="height: 300px; width : 300px" >
           <a href="<%= new_reservation_review_path(reservation) %>" class="text-decoration-none">
             <div class=" p-5 rounded-5" style="background-image: url('<%= cl_image_path reservation.ninja.photo.key%>'); height: 300px">
               <h3 style="color: white"><%= reservation.ninja.name %></h3>
