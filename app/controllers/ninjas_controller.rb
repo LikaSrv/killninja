@@ -17,6 +17,14 @@ class NinjasController < ApplicationController
 
       }
     end
+
+    if params[:query].present?
+      @ninjas = Ninja.all
+      sql_subquery = "name ILIKE :query OR specialty ILIKE :query"
+      @ninjas = Ninja.where(sql_subquery, query: "%#{params[:query]}%")
+    else
+      @ninjas = Ninja.all
+    end
   end
 
   def new

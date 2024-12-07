@@ -1,5 +1,5 @@
 <div class="card shadow-lg" style="width: 18rem">
-    <%= cl_image_tag ninja.photo.key, width: 287, height: 250, gravity: "auto", crop: :fill, class:"card-img-top" %>
+  <%= cl_image_tag ninja.photo.key, width: 287, height: 250, gravity: "auto", crop: :fill, class:"card-img-top" %>
   <div class="card-body">
     <% ninja.rating.times do %>
       <i class="fas fa-star text-warning"></i>
@@ -7,11 +7,13 @@
     <% (5 - ninja.rating).times do %>
       <i class="fas fa-star text-muted"></i>
     <% end %>
-    <h5 class="card-title text-white text-center bg-secondary opacity-75 rounded p-1"><%= ninja.name %></h5>
-    <p class="card-text pt-2"><%= ninja.specialty %></p>
-    <p class="card-text text-center">Lieu : <%= ninja.address %></p>
-    <div class="d-flex justify-content-center">
-      <%= link_to "Voir détails", ninja_path(ninja), class:"btn btn-primary mt-2customize devise text-white" %>
+    <div style="width: 250px;">
+      <h5 class="card-title text-white text-center bg-secondary opacity-75 rounded p-1 m-1" ><%= ninja.name %></h5>
+      <p class="card-text pt-2"><%= ninja.specialty %></p>
+      <p class="card-text text-center">Lieu : <%= ninja.address %></p>
+      <div class="d-flex justify-content-center">
+        <%= link_to "Voir détails", ninja_path(ninja), class:"btn btn-primary mt-2customize devise text-white" %>
+      </div>
     </div>
   </div>
 </div>

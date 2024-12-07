@@ -1,33 +1,39 @@
-    <nav class="navbar navbar-lewagon justify-content-between shadow border border-bottom border-black">
-      <a class="navbar-brand ms-5 me-4" href="<%=ninjas_path%>">
-        <%= image_tag("logo.png", width: 60 ) %> <span class="text-white ms-2">Kill Ninja 𖣘</span>
+<nav class="navbar navbar-lewagon justify-content-between shadow border border-bottom border-black">
+  <div class="d-flex align-items-center">
+    <%# logo + homePage %>
+    <a class="navbar-brand ms-5 me-4" href="<%=ninjas_path%>">
+      <%= image_tag("logo.png", width: 60 ) %> <span class="text-white ms-2">Kill Ninja 𖣘</span>
+    </a>
+  </div>
+  <div style="display: flex; flex-direction: column; align-items: end; justify-content: center">
+    <%# search form + my ninjas button%>
+    <div class="d-flex flex-row align-items-start">
+      <%= form_with url: ninjas_path, method: :get, class: "d-flex " do %>
+        <%= text_field_tag :query,
+            params[:query],
+            class: "form-control mx-2",
+            placeholder: "Rechercher un ninja"
+        %>
+        <%= submit_tag "Rechercher", class: "btn btn-success"%>
+      <% end %>
+      <%# button "Mes ninjas" %>
+      <a href="<%= new_ninja_path%>" class="btn btn-primary mx-2">
+        Mes ninjas
       </a>
-
-      <form class="form-inline row my-é my-lg-0">
-
-        <div class="d-flex" style="align-items: baseline;">
-          <div class="d-none">
-            <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-          </div>
-          <div>
-            <div class="text-end me-4">
-              <a href="<%= new_ninja_path%>", class="btn btn-primary text-white mt-3">
-                Mes ninjas
-              </a>
-            </div>
-            <ul class="navbar-nav d-flex flex-grow-& justify-content-center">
-              <% if user_signed_in? %>
-              <li class="nav-item">
-                <%= link_to 'Déconnecter', destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link nav-end btn btn-danger text-danger hover-deco p-1 mx-3' %>
-              </li>
-                <% else %>
-              <li class="nav-item">
-                <%= link_to 'Connexion', new_user_session_path, class: 'nav-link nav-end btn btn-success text-success hover-co p-1 mx-3' %>
-              </li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
-      </form>
-    </nav>
+    </div>
+    <%# Connexion button %>
+    <div>
+      <ul class="m-0 mt-2 mx-2">
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to 'Déconnecter', destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link btn btn-danger text-danger hover-deco p-2' %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to 'Connexion', new_user_session_path, class: 'nav-link btn btn-success text-success hover-co p-2' %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
